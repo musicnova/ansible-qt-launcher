@@ -12,3 +12,4 @@ username = ybasov1984
 EOF
 
 python -m twine upload dist/*
+echo https://pypi.org/project/ansible-qt-launcher/0.1/
