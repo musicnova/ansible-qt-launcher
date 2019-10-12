@@ -1,3 +1,14 @@
 rm -rf dist/ build/ ansible-qt-launcher.egg-info/
 python setup.py bdist_wheel
+
 pip install dist/ansible-qt-launcher-0.1-py3-none-any.whl
+
+cat > ~/.pypirc << EOF |
+[distutils]
+index-servers=pypi
+[pypi]
+repository = https://upload.pypi.org/legacy/
+username = ybasov1984
+EOF
+
+python -m twine upload dist/*
